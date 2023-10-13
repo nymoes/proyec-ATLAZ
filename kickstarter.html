@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Atlaz</title>
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500&display=swap" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+  <!-- CUSTOM CSS -->
+  <link rel="stylesheet" href="styles.css">
+
+  <style>
+        table {
+            border-collapse: collapse;
+            width: 50%;
+            margin: 20px auto;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+  <div class="menu-btn">
+    <i class="fas fa-bars fa-2x"></i>
+  </div>
+
+  <div class="container">
+    <!-- Navigation -->
+    <nav class="nav-main">
+      <!-- Brand -->
+      <img src="img/LOGO.png" alt="TechNews Logo" class="nav-brand">
+      <!-- Left Nav -->
+      <ul class="nav-menu">
+        <li>
+          <a href="index.html">Home</a>
+        </li>
+        <li>
+          <a href="#">Support <link rel="kickstarter" href="kickstarter.html">
+        </li>
+        <li>
+          <a href="#">Login</a>
+        </li>
+      </ul>
+
+      <!-- Right Nav -->
+      <ul class="nav-menu-right">
+        <li>
+          <a href="#">
+            <i class="fas fa-search"></i>
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <hr>
+
+    <!-- SHOWCASE -->
+    <header class="showcase">
+      <h2>Do you want to support me?</h2>
+      <p>Only Phantom Wallets</p>
+      <a href="#" class="btn">
+        <button id="connectButton">Connect to Phantom Wallet</button>
+      </a>
+    </header>
+
+    <table>
+        <tr>
+            <th>Creators</th>
+            <th>Project name</th>
+            <th>Account</th>
+        </tr>
+        <tr>
+            <td>Jaime Nael Aguirre Lopez</td>
+            <td>Project Ubileo</td>
+            <td>91HBiNsEmiMfVGDgXe3CyWNvPEXh5oFCFZjVYunNhq6X</td>
+        </tr>
+        <!-- Otros registros de proyectos aquí -->
+    </table>
+
+    <!-- Follow -->
+    <section class="social">
+      <p>Follow Atlaz</p>
+      <div class="links">
+        <a href="https://facebook.com">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="https://twitter.com/At1aZ_">
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a href="https://github.com/Nixes25">
+          <i class="fab fa-github"></i>
+        </a>
+      </div>
+    </section>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <h3></h3>
+  </footer>
+
+  <!-- Script para la integración con Phantom Wallet -->
+  <script>
+    const connectButton = document.getElementById("connectButton");
+
+    connectButton.addEventListener("click", async () => {
+        try {
+            await phantom.connect();
+            // La billetera está conectada, puedes realizar operaciones con ella aquí.
+        } catch (error) {
+            console.error("No se pudo conectar a Phantom Wallet", error);
+        }
+    });
+  </script>
+
+  <!-- Script para la integración con Phantom Wallet -->
+  <script src="https://solana-labs.github.io/wallet-adapter/dist/index.cjs.js"></script>
+
+</body>
+
+</html>
